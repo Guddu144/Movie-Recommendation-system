@@ -26,7 +26,7 @@ img {
   height: auto;
 }
 
-a,button {
+button {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
@@ -41,6 +41,7 @@ a,button {
    a {
 	color:#32cf93; ;
 	text-decoration: none;
+  justify-content: center;
   }
    a:hover {
 	color: #32cf93;

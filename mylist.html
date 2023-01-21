@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
   <title>Movie Recommendation System</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
@@ -10,7 +12,8 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cardo:ital,wght@0,400;0,700;1,400&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cardo:ital,wght@0,400;0,700;1,400&display=swap"
     rel="stylesheet">
 
   <!-- Vendor CSS Files -->
@@ -29,7 +32,7 @@
   <!-- ======= Header ======= -->
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid d-flex align-items-center justify-content-between">
-      <a href="#" class="logo d-flex align-items-center me-auto me-lg-0">
+      <a href="#" class="logo d-flex align-items-center  me-auto me-lg-0">
         <i class="bi bi-film"></i>
         <h1>MovRec</h1>
       </a>
@@ -52,44 +55,23 @@
             <a class="nav-link" href="mylist.html">My List</a>
           </li>
         </ul>
-
         <form class="d-flex" role="search">
           <!-- <li class="searchbar"> -->
           <div class="search-box">
-            <input type="text" class="search-input" placeholder="Search Movies">
+            <input type="text" class="search-input" placeholder="Start Looking For Something!">
             <a class="search-btn" href="#">
               <!-- Seach Icon -->
               <i class="bi bi-search"></i>
             </a>
           </div>
-          <!-- </li> --></form>
+          <!-- </li> -->
           <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
-          <button class="btn btn-success" type="submit">Logout</button>
-
+          <button class="btn btn-outline-success" type="submit">Logout</button>
+        </form>
       </div>
     </div>
+    </header>
   </nav>
-
-  <div class="d-flex justify-content-between ">
-    <div class="form-group">
-      <label for="genre-select">Select a genre:</label>
-      <select class="form-control" id="genre-select">
-        <option>Award winning</option>
-        <option>Children</option>
-        <option>Comedies</option>
-        <option>Crime</option>
-        <option>Documentaries</option>
-        <option>Horror</option>
-        <option>Action</option>
-        <option>Romance</option>
-        <option>Thriller</option>
-        <option>Mystery</option>
-      </select>
-    </div>
-    <div class="form-group">Edit Genre
-  </div>
-  </div>
-
 
   <div class="d-flex justify-content-between">
     <div class="row row-cols-1 row-cols-md-6 g-4">
@@ -101,7 +83,7 @@
             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
               content. This content is a little bit longer.</p>
             <a href="#" class="btn btn-success">Give rating</a>
-            <a href="#" class="btn btn-success">+</a>
+            <a href="#" class="btn btn-success">-</a>
           </div>
         </div>
       </div>
@@ -113,7 +95,7 @@
             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
               content. This content is a little bit longer.</p>
             <a href="#" class="btn btn-success">Give rating</a>
-            <a href="#" class="btn btn-success">+</a>
+            <a href="#" class="btn btn-success">-</a>
           </div>
         </div>
       </div>
@@ -125,7 +107,7 @@
             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
               content. This content is a little bit longer.</p>
             <a href="#" class="btn btn-success">Give rating</a>
-            <a href="#" class="btn btn-success">+</a>
+            <a href="#" class="btn btn-success">-</a>
           </div>
         </div>
       </div>
@@ -137,7 +119,7 @@
             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
               content. This content is a little bit longer.</p>
             <a href="#" class="btn btn-success">Give rating</a>
-            <a href="#" class="btn btn-success">+</a>
+            <a href="#" class="btn btn-success">-</a>
           </div>
         </div>
       </div>
@@ -149,7 +131,7 @@
             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
               content. This content is a little bit longer.</p>
             <a href="#" class="btn btn-success">Give rating</a>
-            <a href="#" class="btn btn-success">+</a>
+            <a href="#" class="btn btn-success">-</a>
           </div>
         </div>
       </div>
@@ -161,35 +143,35 @@
             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
               content. This content is a little bit longer.</p>
             <a href="#" class="btn btn-success">Give rating</a>
-            <a href="#" class="btn btn-success">+</a>
+            <a href="#" class="btn btn-success">-</a>
           </div>
         </div>
       </div>
     </div>
-  </div>
+</div>
 
-  <!-- End Hero Section -->
-  <!-- 
+    <!-- End Hero Section -->
+    <!-- 
   <main id="main" data-aos="fade" data-aos-delay="1500">
 
     <!-- ======= Gallery Section ======= -->
 
-  <!-- <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
+    <!-- <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a> -->
 
-  <div id="preloader">
-    <div class="line"></div>
-  </div>
+    <div id="preloader">
+      <div class="line"></div>
+    </div>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/home.js"></script>
+    <!-- Template Main JS File -->
+    <script src="assets/js/home.js"></script>
 
 </body>
 

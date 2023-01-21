@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
     <title>Login Form</title>
@@ -14,17 +13,16 @@
                 <h1 class="title title-large">Sign In</h1>
                 <p class="title title-subs">New user? <span><a href="signup.html" class="linktext">Create an account</a></span></p>
             </div>
-            <form class="form">
+            <form class="form" onsubmit="return validateForm()" action="home.html">
                 <div class="form-group">
-                    <input type="email" name="email" id="email" class="input-field" placeholder="Email address"  required>
+                    <input type="email" name="email" id="email" class="input-field" placeholder="Email address">
                 </div>
                 <div class="form-group">
-                    <input type="password" name="password" id="password" class="input-field" placeholder="Password" required>
+                    <input type="password" name="password" id="password" class="input-field" placeholder="Password">
                 </div>
                 <div class="form-group">
                     <a href="./index.html" class="linktext">Forgot Password</a>
-                    <a href="home.html">
-                    <input type="button" name="submit" class="input-submit" value="Login"></a>
+                    <button id="myButton" type="submit">Login</button>
                 </div>
             </form>
             <div class="line">
@@ -49,6 +47,6 @@
         </div>
     </div>
 </main>
+<script src="assets/js/login.js"></script>
 </body>
 </html>
-
