@@ -1,17 +1,12 @@
+function validateForm() {
 
-document.getElementById("myForm").addEventListener("submit", function(event) {
-	event.preventDefault();
-	validateForm();
-  });
-  function validateForm() {
 	var email = document.getElementById("email").value;
 	var password = document.getElementById("password").value;
 	var error = "";
   
 	// Check if the email field is empty
 	if (!email) {
-	  alert("Email is required");
-	  email.focus();
+	  error="Email is required";
 	}
 	// Check if the email field is a valid email
 	else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
@@ -31,9 +26,57 @@ document.getElementById("myForm").addEventListener("submit", function(event) {
 	}
 	// Display an error message if the input is not valid
 	if (error) {
+	event.preventDefault();
 	  alert(error);
+	  return false;
 	} else {
-	  //Submit the form or do whatever you want to do
+		return true;
 	}
   }
 	
+
+  function validateSignUp() {
+	var username = document.getElementById("Username").value;
+	var email = document.getElementById("email").value;
+	var password = document.getElementById("password").value;
+	var confirmPassword = document.getElementById("password").value;
+	var error = "";
+  
+	// Check if the username field is empty
+	if (!username) {
+	  error = "Username is required";
+	}
+	// Check if the email field is empty
+	else if (!email) {
+	  error = "Email is required";
+	}
+	// Check if the email field is a valid email
+	else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+	  error = "Invalid email address";
+	}
+	// Check if the password field is empty
+	else if (!password) {
+	  error = "Password is required";
+	}
+	// Check if the confirm password field is empty
+	else if (!confirmPassword) {
+	  error = "Confirm Password is required";
+	}
+	// Check if the password and confirm password fields match
+	else if (password !== confirmPassword) {
+	  error = "Passwords do not match";
+	}
+	// Check if the checkbox is not selected
+	else if (!document.getElementById("checkbox").checked) {
+	  error = "Please accept the Term & Conditions";
+	}
+	// Display an error message if the input is not valid
+	if (error) {
+	  event.preventDefault();
+  
+	  alert(error);
+	  return false;
+	} else {
+	  return true;
+	}
+  }
