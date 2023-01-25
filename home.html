@@ -37,7 +37,7 @@
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse nav-link-item" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link " aria-current="page" href="#">Home</a>
@@ -72,8 +72,8 @@
 
   <div class="d-flex justify-content-between ">
     <div class="form-group">
-      <label for="genre-select">Select a genre:</label>
-      <select class="form-control" id="genre-select">
+      <label for="genre-select" class="text-dark">Select a genre:</label>
+      <select  id="genre-select">
         <option>Award winning</option>
         <option>Children</option>
         <option>Comedies</option>
@@ -86,10 +86,19 @@
         <option>Mystery</option>
       </select>
     </div>
-    <div class="form-group">Edit Genre
+    <div class="form-group btn btn-light text-black">Edit Genre
   </div>
   </div>
 
+  <style>
+/* Tooltip container */
+.card-body a[data-toggle="tooltip"] {
+  position: relative;
+  display: inline-block;
+}
+
+
+  </style>
 
   <div class="d-flex justify-content-between">
     <div class="row row-cols-1 row-cols-md-6 g-4">
@@ -101,9 +110,9 @@
             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
               content. This content is a little bit longer.</p>
             <a href="#" class="btn btn-success">Give rating</a>
-            <a href="#" class="btn btn-success">+
-              
+            <a href="#" class="btn btn-success" data-toggle="tooltip" data-placement="top" title=" Added to a list">+
             </a>
+
           </div>
         </div>
       </div>

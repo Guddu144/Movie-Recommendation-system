@@ -21,6 +21,6 @@ nextButton.addEventListener("click", function() {
     }
     else {
         // navigate to next page
-        window.location.href = "nextpage.html";
+        window.location.href = "home.html";
     }
 });
