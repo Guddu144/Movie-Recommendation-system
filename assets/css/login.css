@@ -107,9 +107,12 @@ button {
   line-height: inherit;
   text-rendering: optimizeLegibility;
 }
+h4{
+  text-align: center;
+}
 .title-large {
-  font-size: 2rem;
-  font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 500;
   color: #252a32;
 }
 .title-subs {
