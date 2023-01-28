@@ -120,27 +120,40 @@ integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amn
                         <form method="post" action="/admin/category/save" class="modal-content">
                             @csrf
                             <div class="modal-header text-center">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Add Category</h5>
+                                <h5 class="modal-title" id="exampleModalLongTitle">Add Movie</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body ">
 
+                                <!-- <div class="form-group">
+                                    <label class="text-black" for="exampleInputEmail1">Add Movie</label>
+                                    <input type="text" class="form-control" name="category" id="exampleInputEmail1">
+
+                                </div> -->
+
+                                    <div class="form-group">
+                                    <label class="text-black" for="exampleInputEmail1">Title</label>
+                                    <input type="text" class="form-control" name="category" id="exampleInputEmail1">
+
+                                </div>
+
                                 <div class="form-group">
-                                    <label class="text-black" for="exampleInputEmail1">Add Movie</label>
-                                    <input type="text" class="form-control" name="category" id="exampleInputEmail1">
-
-                                </div>
-
-                                    <div class="form-group">
-                                    <label class="text-black" for="exampleInputEmail1">Give Rating</label>
-                                    <input type="text" class="form-control" name="category" id="exampleInputEmail1">
-
+                                  <label class="text-black" for="exampleInputEmail1">Description</label>
+                                  <input type="text" class="form-control" name="category" id="exampleInputEmail1">
                                 </div>
                                     <div class="form-group">
-                                    <label class="text-black" for="exampleInputEmail1">Add Movie</label>
+                                    <label class="text-black" for="exampleInputEmail1">Genre</label>
                                     <input type="text" class="form-control" name="category" id="exampleInputEmail1">
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="text-black" for="exampleInputEmail1">Actor</label>
+                                      <input type="text" class="form-control" name="category" id="exampleInputEmail1">
+                                    </div>
+                                      <div class="form-group">
+                                        <label class="text-black" for="exampleInputEmail1">Director</label>
+                                        <input type="text" class="form-control" name="category" id="exampleInputEmail1">
 
                                 </div>
 

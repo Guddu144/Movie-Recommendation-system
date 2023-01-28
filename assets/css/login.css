@@ -264,6 +264,16 @@ input #checkbox{
     width: 100%;
     margin-top: 2px;
 }
+.authLinks.greenButton {
+  background-color: #32cf93;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: normal;
+  padding: 7px 17px;
+  border-radius: 7px;
+  color: #fff;
+  margin: 8px;
+}
 /* .btn{
     width: 50%;
     padding: 15px;

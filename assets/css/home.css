@@ -646,7 +646,7 @@ h1 a {
 
 .admin-dashboard {
   z-index: -1;
-  background: #2a4327;
+  background: black;
   padding-bottom: 100px;
   padding-top: 60px;
 }
@@ -796,11 +796,11 @@ h1 a {
 }
 
 .cat-modal .modal span {
-  color: var(--Electric-Blue);
+  color: var(--color-primary);
 }
 
 .cat-modal h5 {
-  color: var(--Electric-Blue);
+  color: var(--color-primary);
   margin-left: 20px;
 }
 
@@ -811,12 +811,12 @@ h1 a {
 }
 
 .cat-modal .modal-body button {
-  background: var(--Electric-Blue);
+  background: var(--color-primary);
   border-radius: 10px;
   color: white;
   padding: 8px;
-  border-color: var(--Electric-Blue);
-  outline-color: var(--Electric-Blue);
+  border-color: var(--color-primary);
+  outline-color: var(--color-primary);
 }
 
 .cat-modal .modal-body label {
@@ -825,7 +825,7 @@ h1 a {
 
 .cat-modal .modal-body input {
   width: 90%;
-  border-color: var(--Electric-Blue);
+  border-color: var(--color-primary);
 }
 
 .user-table {
