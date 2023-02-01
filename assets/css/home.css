@@ -36,7 +36,7 @@ body {
   margin: 0;
   font-family: var(--font-default);
   opacity: 0.9;
-  background-color:#3b3c36;
+  background-color: #3b3c36;
   z-index: 1;
   color: var(--color-default);
 }
@@ -117,11 +117,11 @@ a:hover {
 /* Card*/
 .card {
   color: black;
-  transition:all 0.3s;
-  height:40vh;
+  transition: all 0.3s;
+  height: 40vh;
 }
-.card:hover{
-  transform:scale(1.15);
+.card:hover {
+  transform: scale(1.15);
 }
 /* Tooltip container */
 .card-body a[data-toggle="tooltip"] {
@@ -133,10 +133,38 @@ a:hover {
   height: 200px;
   object-fit: cover;
 }
-.watchlist-icon {
+/* .watchlist-icon {
   font-size: 24px;
   color:#000;
   position: relative;
+} */
+.bookmark-icon-1 {
+  background: none;
+  border: none;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  font-size: 24px;
+}
+.bookmark-icon {
+  background: none;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  font-size: 24px;
+}
+#popup {
+  background-color: #000;
+  border: 1px solid gray;
+  top: -10px;
+  right: 10px;
+  color: #fff;
+
+  /* transform: translate(-50%, -50%); */
+  display: none;
+}
+
+.hidden {
+  display: none;
 }
 
 h1 {
@@ -501,7 +529,7 @@ h1 a {
 
 .dashboard {
   z-index: -1;
-  background: #FD7F20;
+  background: #fd7f20;
   padding-bottom: 100px;
   padding-top: 60px;
 }

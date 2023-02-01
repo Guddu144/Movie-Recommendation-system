@@ -1,16 +1,18 @@
-const watchlistIcon = document.querySelector('.watchlist-icon');
+const watchlistIcon = document.querySelector(".watchlist-icon");
 
-watchlistIcon.addEventListener('click', function() {
-    window.location.href = "mylist.html";
-    var addIcon = watchlist.querySelector(".add-icon");
-  var checkIcon = watchlist.querySelector(".check-icon");
-  addIcon.style.display = "none";
-  checkIcon.style.display = "block";
-  // Perform action here
+watchlistIcon.addEventListener("click", function () {
+  // window.location.href = "mylist.html";
 });
+const bookmarkIcon = document.querySelector("#bookmark-icon");
+const popup = document.querySelector("#popup");
 
-const watchlist = document.querySelector("#watchlist");
-
-watchlist.addEventListener("click", function() {
-  this.classList.toggle("added");
+document.getElementById("bookmark-icon").addEventListener("click", function () {
+  if (this.classList.contains("bookmark-icon-1")) {
+    this.classList.remove("bookmark-icon-1");
+    this.classList.add("bookmark-icon");
+  } else {
+    this.classList.remove("bookmark-icon");
+    this.classList.add("bookmark-icon-1");
+  }
+  popup.style.display = "block";
 });
