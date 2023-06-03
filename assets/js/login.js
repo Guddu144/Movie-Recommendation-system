@@ -1,3 +1,31 @@
+document.getElementById("login").onclick = function () {
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+  let params = {
+    "username": email,
+    "password": password,
+  };
+
+  const login = async () => {
+    let req = await request(
+      "POST",
+      "http://localhost:8080/user/login",
+      params
+    );
+    let message = req.message;
+    console.log(message)
+  }
+  login();
+
+  // console.log(email)
+  // if (email == 'admin@gmail.com' && password == 'Admin123@') {
+  //   window.location.href = "admin.html";
+  // } else {
+  //   window.location.href = "home.html"
+  // }
+  // console.log('sh')
+}
+
 function validateForm() {
   var email = document.getElementById("email").value;
   var password = document.getElementById("password").value;
@@ -79,3 +107,40 @@ function validateSignUp() {
     return true;
   }
 }
+
+const request = async (method, url, params = {}) => {
+  const req = {
+    method: method,
+    credentials: 'include',
+    mode: 'cors',
+    headers: {
+      'Accept': 'application/json',
+    },
+  };
+
+  if (method === 'GET') {
+    const getParams = new URLSearchParams(params);
+    url += `?${getParams}`;
+  } else if (params instanceof FormData) {
+    req.body = params;
+  } else {
+    req.headers['Content-Type'] = 'application/json';
+    req.body = JSON.stringify(params);
+  }
+
+  const res = await fetch(url, req);
+  const data = await res.json();
+  if (res.failed || !res.ok) {
+    throw new ResponseError(data.message, data.errors);
+  }
+
+  return data;
+};
+
+class ResponseError extends Error {
+  constructor(msg, errors) {
+    super(msg);
+    this.errors = errors;
+  }
+}
+

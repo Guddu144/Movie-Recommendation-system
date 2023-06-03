@@ -13,7 +13,7 @@
                 <h1 class="title title-large">Sign In</h1>
                 <p class="title title-subs">New user? <span><a href="signup.html" class="linktext">Create an account</a></span></p>
             </div>
-            <form class="form" onsubmit="return validateForm()" action="home.html">
+            <form class="form" id="login_form">
                 <div class="form-group">
                     <input type="email" name="email" id="email" class="input-field" placeholder="Email address">
                 </div>
@@ -22,15 +22,15 @@
                 </div>
                 <div class="form-group">
                     <a href="./index.html" class="linktext">Forgot Password</a>
-                    <button class="authLinks greenButton" type="submit">Login</button>
+                    <button class="authLinks greenButton" id="login" type="button">Login</button>
                 </div>
             </form>
-            <div class="line">
+            <!-- <div class="line">
                 <span class="line-bar"></span>
                 <span class="line-text">Or</span>
                 <span class="line-bar"></span>
-            </div>
-            <div class="method">
+            </div> -->
+            <!-- <div class="method">
                 <div class="method-item">
                     <a href="#" class="btn-action">
                         <i class="icons icons-google fab fa-google"></i>
@@ -43,7 +43,7 @@
                         <span>Sign in with Facebook</span>
                     </a>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </main>
