@@ -1,10 +1,9 @@
 const request = async (method, url, params = {}) => {
-  let token = localStorage.getItem('token');
   const req = {
     method: method,
     headers: {
       'Accept': 'application/json',
-      'Authorization': 'Bearer ' + token
+      'Access-Control-Allow-Headers': '*'
     },
   };
 
@@ -20,10 +19,9 @@ const request = async (method, url, params = {}) => {
 
   const res = await fetch(url, req);
   const data = await res.json();
-
-  // if (res.failed || !res.ok) {
-  //     throw new ResponseError(data.message, data.errors);
-  // }
+  if (res.failed || !res.ok) {
+    throw new ResponseError(data.message, data.errors);
+  }
 
   return data;
 };
@@ -34,21 +32,3 @@ class ResponseError extends Error {
     this.errors = errors;
   }
 }
-
-const removeEmpty = val => {
-  if (Array.isArray(val)) {
-    return val
-      .map(val => typeof val === 'object' ? removeEmpty(val) : val)
-      .filter(val => !isEmpty(val));
-  } else if (val && typeof val == 'object') {
-    return Object.entries(val)
-      .map(([k, v]) => ([k, removeEmpty(v)]))
-      .reduce((acc, [k, v]) => {
-        if (!isEmpty(v)) {
-          acc[k] = v;
-        }
-        return acc;
-      }, {});
-  }
-  return val;
-};

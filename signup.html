@@ -17,36 +17,30 @@
                 <div class="title">
                     <h1 class="title title-large">Create Account</h1>
                 </div>
-                <form class="form" onsubmit="return validateSignUp()" action="./genre.html">
+                <form class="form" id="signup_form"   >
                     <div class="form-group">
-                        <input type="text" name="Username" id="Username" class="input-field" placeholder="Username"
+                        <input type="text" name="userName" id="userName" class="input-field" placeholder="userName"
                             >
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email" id="email" class="input-field" placeholder="Email address"
+                        <input type="email" name="userEmail" id="userEmail" class="input-field" placeholder="userEmail address"
                             >
                     </div>
                     <div class="form-group">
-                        <input type="password" name="password" id="password" class="input-field" placeholder="Password"
+                        <input type="password" name="userPassword" id="userPassword" class="input-field" placeholder="userPassword"
                             >
                     </div>
                     <div class="form-group">
                         <input type="password" name="confirm_password" id="confirm_password" class="input-field"
                             placeholder="Confirm Password" >
                     </div>
-                    <!-- <div class="checkBox"> -->
-                    <input type="checkbox" name="checkbox" id="checkbox">
-                    <span class="text">I Agree with Term & Conditions.</span>
-                    <!-- </div> -->
-                    </br>
-                    </br>
                     <div class="form-group">
-                            <button type="submit" name="submit" class="input-submits" value="Sign Up"> Submit </button>
+                            <button type="button" id="signup" name="submit" class="input-submits" > Submit </button>
                     </div>
                 </form>
 
 
-                <div class="line">
+                <!-- <div class="line">
                     <span class="line-bar"></span>
                     <span class="line-text">Or</span>
                     <span class="line-bar"></span>
@@ -64,13 +58,14 @@
                             <span>Sign in with Facebook</span>
                         </a>
                     </div>
-                </div>
+                </div> -->
 
             </div>
         </div>
         </div>
     </main>
-<script src="assets/js/login.js"></script>
+<script src="assets/js/signup.js"></script>
+<script src="assets/js/request.js"></script>
 
 </body>
 
