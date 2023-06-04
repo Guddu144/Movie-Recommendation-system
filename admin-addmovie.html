@@ -135,33 +135,36 @@ integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amn
 
                                     <div class="form-group">
                                     <label class="text-black" for="exampleInputEmail1">Title</label>
-                                    <input type="text" class="form-control" name="category" id="exampleInputEmail1">
+                                    <input type="text" class="form-control" name="movieTitle" id="movieTitle">
 
                                 </div>
 
                                 <div class="form-group">
                                   <label class="text-black" for="exampleInputEmail1">Description</label>
-                                  <input type="text" class="form-control" name="category" id="exampleInputEmail1">
+                                  <input type="text" class="form-control" name="movieDescription" id="movieDescription">
                                 </div>
                                 <div class="form-group">
                                     <label class="text-black" for="exampleInputEmail1">Genre</label>
-                                    <input type="text" class="form-control" name="category" id="exampleInputEmail1">
+                                    <select id="genreType"  class="form-control" name="genreType">
+                                      <option value="Romance">Romance</option>
+                                      <option value="Comedy">Comedy</option>
+                                      <option value="Horror">Horror</option>
+                                      <option value="Thriller">Thriller</option>
+                                      <option value="Adventure">Adventure</option>  
+                                    </select>
                                </div>
-                                <div class="form-group">
-                                      <label class="text-black" for="exampleInputEmail1">Actor</label>
-                                      <input type="text" class="form-control" name="category" id="exampleInputEmail1">
-                                </div>
+                                
                                 <div class="form-group">
                                       <label class="text-black" for="exampleInputEmail1">Image</label>
-                                      <input type="file" class="form-control" name="Image" id="exampleInputEmail1">
+                                      <input type="file" class="form-control" name="file" id="file">
                                 </div>
                                 <div class="form-group">
-                                        <label class="text-black" for="exampleInputEmail1">Director</label>
-                                        <input type="text" class="form-control" name="category" id="exampleInputEmail1">
+                                        <label class="text-black" for="exampleInputEmail1">Release Date</label>
+                                        <input type="date" class="form-control" name="releaseDate" id="releaseDate">
                                 </div>
 
 
-                                <button type="submit">ADD</button>
+                                <button type="button" id="add_movie" >ADD</button>
 
 
                             </div>
@@ -194,6 +197,8 @@ integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amn
 
   <!-- Template Main JS File -->
   <script src="assets/js/home.js"></script>
+  <script src="assets/js/add_movie.js"></script>
+  <script src="assets/js/request.js"></script>
 
 </body>
 

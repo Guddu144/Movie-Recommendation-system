@@ -1,4 +1,4 @@
-const request = async (method, url, params = {}) => {
+const request = async (method, url,includeAuth, params = {}) => {
   const req = {
     method: method,
     headers: {
@@ -6,6 +6,10 @@ const request = async (method, url, params = {}) => {
       'Access-Control-Allow-Headers': '*'
     },
   };
+  if (includeAuth) {
+    req.headers.Authorization =localStorage.getItem('token');
+    }
+  
 
   if (method === 'GET') {
     const getParams = new URLSearchParams(params);
