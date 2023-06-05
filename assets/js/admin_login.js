@@ -10,6 +10,7 @@ document.getElementById("admin_login").onclick = function () {
       let req = await request(
         "POST",
         "http://localhost:8080/user/login",
+        false,
         params
       );
       let status = req.status;
