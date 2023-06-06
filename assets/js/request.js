@@ -1,4 +1,4 @@
-const request = async (method, url,includeAuth, params = {}) => {
+const request = async (method, url, includeAuth, params = {}) => {
   const req = {
     method: method,
     headers: {
@@ -7,9 +7,10 @@ const request = async (method, url,includeAuth, params = {}) => {
     },
   };
   if (includeAuth) {
-    req.headers.Authorization =localStorage.getItem('token');
-    }
-  
+    const token = localStorage.getItem('token');
+    req.headers.Authorization = token.replace("Bearer ", "");
+  }
+
 
   if (method === 'GET') {
     const getParams = new URLSearchParams(params);
