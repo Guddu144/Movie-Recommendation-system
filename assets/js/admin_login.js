@@ -15,7 +15,7 @@ document.getElementById("admin_login").onclick = function () {
       );
       let status = req.status;
      
-      if(status==200){
+      if(Number(status)===200){
        localStorage.setItem('token',req.JwtToken)
         window.location.href='admin.html'
       }
