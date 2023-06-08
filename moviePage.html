@@ -75,6 +75,7 @@
     </header>
   </nav>
     
+  <div id="rating">
     <section class="transformers-area">
       <div class="container">
         <div class="transformers-box">
@@ -123,62 +124,73 @@
         </div>
       </div>
     </section>
-
+  
     <section class="details-area">
       <div class="container">
-        <div class="details-content">
+        <div class="details-content" style="position: relative;">
           <div class="details-overview">
             <h2>Overview</h2>
-            <p>
-              Humans are at war with the Transformers, and Optimus Prime is
-              gone. The key to saving the future lies buried in the secrets of
-              the past and the hidden history of Transformers on Earth. Now it's
-              up to the unlikely alliance of inventor Cade Yeager, Bumblebee, a
-              n English lord and an Oxford professor to save the world.
-              Transformers: The Last Knight has a deeper mythos and bigger
-              spectacle than its predecessors, yet still ends up being mostly
-              hollow and cacophonous. The first "Transformers" movie that could
-              actually be characterized as badass. Which isn't a bad thing. It
-              may, in fact, be better.
+            <p class="description">
             </p>
           </div>
-
-          <div class="rating-col">
-            <h5>Have you watched it?</h5>    
-            <p>Rate the movie:</p>
-            <div class="rating">
-              <input type="radio" name="star" id="star1">
-              <label for="star1"></label>
-              <input type="radio" name="star" id="star2">
-              <label for="star2"></label>
-              <input type="radio" name="star" id="star3">
-              <label for="star3"></label>
-              <input type="radio" name="star" id="star4">
-              <label for="star4"></label>
-              <input type="radio" name="star" id="star5">
-              <label for="star5"></label>
-            </div>
-          </div>
-
-          <div class="details-reply">
-            <h2>Leave a Comment</h2>
-            <form action="#">
-              <div class="row">
-                  <div class="textarea-container">
-                    <textarea class="txt-area" placeholder="Enter Your Comment Here"></textarea>
+              <form id="rating">
+                  <div class="rating-col">
+                    <h5>Have you watched it?</h5>    
+                    <p>Rate the movie:</p>
+                    <div class="rating" style="position: absolute;top:302px;">
+                      <input type="radio" name="star" id="star1" value="5">
+                      <label for="star1"></label>
+                      <input type="radio" name="star" id="star2" value="4">
+                      <label for="star2"></label>
+                      <input type="radio" name="star" id="star3" value="3">
+                      <label for="star3"></label>
+                      <input type="radio" name="star" id="star4" value="2">
+                      <label for="star4"></label>
+                      <input type="radio" name="star" id="star5" value="1">
+                      <label for="star5"></label>
+                    </div>
                   </div>
-              </div>
-            </form>
-          </div>
-          
-          <div class="center-btn">
-          <div class="details-comment">
-            <a class="theme-btn theme-btn2" href="#">Post Comment</a>
-          </div>
-          </div>
+                  
+                  <div class="center-btn">
+                    <div class="details-comment">
+                      <a class="theme-btn theme-btn2" href="#">
+                      <button type="button" name="submit" id="rate_btn" class="input-submits px-4" style="background-color: red;color: white;padding: 10px;"> Rate</button>
+                      </a>
+                    </div>
+                  </div>
+              </form>
         </div>
       </div>
     </section>
-
+  </div>
   </body>
 </html>
+
+
+<script src="assets/js/request.js"></script>
+  <script src="assets/js/get_movie.js"></script>
+  <script src="assets/js/home.js"></script>
+  <script src="assets/js/rating.js"></script>
+
+<script>
+  const getMovieById = async () => {
+  const movieId=localStorage.getItem('movieId')
+  let req = await request(
+    "GET",
+    `http://localhost:9595/movie/read/${movieId}`,
+    true,
+  );
+
+  let data = req.data;
+  console.log(data)
+  document.querySelector(".transformers-content img").src = data.movieImage;
+  document.querySelector(".transformers-content h2").textContent = data.movieTitle;
+  document.querySelector(".transformers-right a").textContent = data.genreType;
+  document.querySelector(".description").textContent = data.movieDescription;
+  document.querySelectorAll(".transformers-right")[4].textContent = data.releaseDate;
+
+}
+getMovieById();
+
+</script>
+

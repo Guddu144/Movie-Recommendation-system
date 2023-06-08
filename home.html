@@ -6,7 +6,7 @@
   <title>Movie Recommendation System</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
@@ -23,6 +23,7 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/home.css" rel="stylesheet">
+  <link href="assets/css/rating.css" rel="stylesheet">
 </head>
 
 <body>
@@ -93,26 +94,11 @@
   </div>
   </div>
 
-  <div class="row row-cols-1 row-cols-md-6 g-4">
-    <div class="col">
-      <div class="card position-relative">
-        <img src="assets/img/kabaddi.jpg" class="card-img-top" alt="...">
-        <button id="bookmark-icon" class="bookmark-icon">
-        <i class="fas fa-bookmark watchlist-icon position-absolute" style="top: 10px; right: 10px;"></i>
-     </button>
-     <div id="popup" class="hidden">
-      Bookmark added!
-    </div>
-        <div class="card-body">
-          <h5 class="card-title">Movie title</h5>
-          <!-- <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
-          <!-- <a href="#" class="btn btn-success">Give rating</a>
-            <a href="#" class="btn btn-success" data-toggle="tooltip" data-placement="top" title=" Added to a list">+
-            </a> -->
-        </div>
-      </div>
-    </div>
+  <div id="movie" class="d-flex flex-wrap gap-4 movie_card">
+
+    
   </div>
+  
     
 <!--For recommendation movie-->
 
@@ -182,7 +168,10 @@
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
+  <script src="assets/js/request.js"></script>
+  <script src="assets/js/get_movie.js"></script>
   <script src="assets/js/home.js"></script>
+  <script src="assets/js/rating.js"></script>
 
 </body>
 

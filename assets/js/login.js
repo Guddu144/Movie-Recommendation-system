@@ -9,16 +9,19 @@ document.getElementById("login").onclick = function () {
   const login = async () => {
     let req = await request(
       "POST",
-      "http://localhost:8080/user/login",
+      "http://localhost:9595/user/login",
       false,
       params
     );
     let status = req.status;
-   
-    if(status==200){
-      window.location.href='home.html'
+
+    if (Number(status) === 200) {
+      // window.location.href = 'home.html'
+      console.log('suc')
+      localStorage.setItem('token', req.JwtToken)
+
     }
-    else{
+    else {
       alert('Cannot login')
     }
   }

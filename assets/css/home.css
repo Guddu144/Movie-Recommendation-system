@@ -124,10 +124,10 @@ a:hover {
   transform: scale(1.15);
 }
 /* Tooltip container */
-.card-body a[data-toggle="tooltip"] {
+/* .card-body a[data-toggle="tooltip"] {
   position: relative;
   display: inline-block;
-}
+} */
 .card-img-top {
   width: 100%;
   height: 200px;

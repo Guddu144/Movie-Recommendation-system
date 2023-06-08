@@ -7,8 +7,9 @@ const request = async (method, url, includeAuth, params = {}) => {
     },
   };
   if (includeAuth) {
-    const token = localStorage.getItem('token');
-    req.headers.Authorization = token.replace("Bearer ", "");
+    // const token = localStorage.getItem('token');
+    // req.headers.Authorization = token.replace("Bearer ", "");
+    req.headers.Authorization = (localStorage.getItem('token')).trim();
   }
 
 
