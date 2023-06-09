@@ -5,8 +5,8 @@ const getMovie = async () => {
     true
   );
 
-  let data = req.data;
-
+  let val = req.data;
+  const data= val.slice(0,5)
 
   const div = data.map(i => {
 

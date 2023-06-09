@@ -15,8 +15,8 @@ document.getElementById("login").onclick = function () {
     );
     let status = req.status;
 
-    if (Number(status) === 200) {
-      // window.location.href = 'home.html'
+    if (status === "200") {
+      window.location.href = 'home.html'
       console.log('suc')
       localStorage.setItem('token', req.JwtToken)
 
