@@ -30,7 +30,7 @@ document.getElementById("add_movie").onclick = function () {
     let status = req.status;
 
     // if (Number(status) === 200) {
-    //   window.location.href = 'admin.html'
+    //   window.location.reload();
     //   console.log('success')
     // }
     // else {

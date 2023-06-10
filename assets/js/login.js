@@ -22,12 +22,12 @@ document.getElementById("login").onclick = function () {
 
     }
     else {
-      alert('Cannot login')
+      window.alert('Cannot login')
     }
   }
   login();
 
-  // console.log(email)
+  // console.log(email)++
   //
   // console.log('sh')
 }
