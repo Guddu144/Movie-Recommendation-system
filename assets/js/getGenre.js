@@ -23,7 +23,7 @@ const getGenre = async () => {
           <div class="col-2">
             <span class="editbtn" data_movie_id="${i.movieId}">
               <div class="card position-relative">
-                <img src="http://localhost:5500/${i.imageFullPath}" class="card-img-top" alt="...">
+                <img src="http://localhost:9595/image/${i.movieId}" class="card-img-top" alt="...">
                 <button id="bookmark-icon" class="bookmark-icon">
                   <i class="fas fa-bookmark watchlist-icon position-absolute" style="top: 10px; right: 10px;"></i>
                 </button>
@@ -31,7 +31,7 @@ const getGenre = async () => {
                   Bookmark added!
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title text-black">${i.movieTitle}</h5>
+                  <h5 class="card-title text-black text-truncate">${i.movieTitle}</h5>
                   <p class="card-text text-truncate">${i.movieDescription}</p> 
                 </div>
               </div>

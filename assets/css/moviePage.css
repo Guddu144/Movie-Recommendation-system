@@ -352,7 +352,7 @@ border: none;
 }
 
 .rating{
-  position: absolute;
+  /* position: absolute; */
   bottom: -11%;
   left: 20%;
   transform:translate(-50%,-50%) rotateY(180deg);
@@ -405,4 +405,6 @@ border: none;
 
 .rating-col {
   margin-bottom: 3rem;
+  /* display: flex;
+  flex-direction:column; */
 }

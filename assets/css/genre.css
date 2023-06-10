@@ -16,6 +16,9 @@
   scroll-behavior: smooth;
 }
 
+#text{
+  color: #000;
+  }
   
   .container {
     width: 80%;
