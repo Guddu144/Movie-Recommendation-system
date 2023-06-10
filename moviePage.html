@@ -52,7 +52,7 @@
             <a class="nav-link" href="upcoming.html">Upcoming</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">My List</a>
+            <a class="nav-link" href="mylist.html">My List</a>
           </li>
         </ul>
         <form class="d-flex" role="search">
@@ -86,6 +86,8 @@
               </div>
             </div>
             <div class="col-lg-7">
+              <div class="messageDiv"></div>
+
               <div class="transformers-content">
                 <h2>The Transformers</h2>
                 <ul>
@@ -119,6 +121,11 @@
                   </li>
                 </ul>
               </div>
+              <div class="d-flex">
+              <button id="bookmark" class="bookmark-icon">
+                <i class="fas fa-bookmark watchlist-icon position-absolute" style="top: 10px; right: 10px;"></i>
+              </button>
+            </div>
               <div class="container">
                 <div class="details-content" style="position: relative;">
                   <div class="details-overview">
@@ -179,7 +186,7 @@
   );
 
   let data = req.data;
-  console.log(data)
+  
   document.querySelector(".transformers-content img").src = `http://localhost:9595/image/${movieId}`;
   document.querySelector(".transformers-content h2").textContent = data.movieTitle;
   document.querySelector(".transformers-right a").textContent = data.genreType;
@@ -189,5 +196,51 @@
 }
 getMovieById();
 
+
+
 </script>
 
+<script>
+document.getElementById("remove").onclick = function () {
+  const movieId = localStorage.getItem('movieId');
+
+  const addBookmarks = async () => {
+    
+      let val=await request("DELETE", `http://localhost:9595/watchlist/remove/${movieId}`, true);
+      console.log(val?.data)
+     
+
+      // API request is successful, do something (e.g., show a success message)
+   
+  };
+  
+  addBookmarks();
+  
+
+}
+
+
+
+</script>
+<script>
+document.getElementById("bookmark").onclick = function () {
+  const movieId = localStorage.getItem('movieId');
+
+  const remove = async () => {
+    
+      let val=await request("POST", `http://localhost:9595/watchlist/add/${movieId}`, true);
+      console.log(val)
+      let msg=val?.data
+  document.querySelector(".messageDiv").textContent = msg;
+      // API request is successful, do something (e.g., show a success message)
+   
+  };
+  
+  remove();
+  
+
+}
+
+
+
+</script>

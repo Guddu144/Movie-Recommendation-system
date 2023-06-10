@@ -6,12 +6,10 @@ const getMovie = async () => {
   );
 
   let val = req.data;
-  const data= val.slice(0,5)
-console.log(data)
-  const div = data.map(i => {
+  
+  const div = val.map(i => {
 
-    return 
-    ` <div class="col-2">
+    return  ` <div class="col-2">
         <span class="editbtn" data_movie_id="${i.movieId}">
         <div class="card position-relative">
           <img src="http://localhost:9595/image/${i.movieId}" class="card-img-top" alt="...">
@@ -29,17 +27,7 @@ console.log(data)
       </div>`
   });
 
-
-  $(document).ready(function () {
-    $(document).on("click", ".editbtn", function () {
-      let movieId = $(this).attr("data_movie_id");
-      localStorage.setItem('movieId', movieId);
-
-      window.location.href = "moviePage.html";
-    });
-  });
-
-  document.getElementById('movie').innerHTML = div;
+  document.getElementById('latest').innerHTML = div;
 
 };
 
