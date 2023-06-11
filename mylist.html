@@ -8,6 +8,7 @@
   <title>Movie Recommendation System</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -144,6 +145,13 @@
       `;
     });
   
+    $(document).ready(function () {
+            $(document).on("click", ".editbtn", function () {
+              let movieId = $(this).attr("data_movie_id");
+              localStorage.setItem('movieId', movieId);
+              window.location.href = "moviePage.html";
+            });
+          });
     document.getElementById('mylist').innerHTML = div;
   
   };

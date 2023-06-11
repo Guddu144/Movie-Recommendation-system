@@ -6,6 +6,7 @@ document.getElementById("login").onclick = function () {
     "password": password,
   };
 
+  validateForm();
   const login = async () => {
     let req = await request(
       "POST",
@@ -40,6 +41,7 @@ function validateForm() {
   // Check if the email field is empty
   if (!email) {
     error = "Email is required";
+
   }
   // Check if the email field is a valid email
   else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
