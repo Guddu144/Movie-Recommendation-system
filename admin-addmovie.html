@@ -65,16 +65,16 @@ integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amn
           </li>
         </ul>
 
-        <form class="d-flex" role="search">
-          <!-- <li class="searchbar"> -->
+        <!-- <form class="d-flex" role="search">
+           <li class="searchbar">
           <div class="search-box">
             <input type="text" class="search-input" placeholder="Search Movies">
             <a class="search-btn" href="#">
-              <!-- Seach Icon -->
+              Seach Icon
               <i class="bi bi-search"></i>
             </a>
-          </div>
-          <!-- </li> --></form>
+          </div> -->
+          <!-- </li></form> -->
           <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
           <!-- <button class="btn btn-success logout-btn" type="submit">Logout</button> -->
 
@@ -92,15 +92,15 @@ integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amn
         <div class="container">
           <div>Add movie as you like</div>
             <!-- Modal -->
-            <section class="cat-modal">
+            <section class="cat-modal" >
                 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
                     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <form method="post" action="/admin/category/save" class="modal-content">
                             @csrf
-                            <div class="modal-header text-center">
+                            <div class="modal-header text-center  "   >
                                 <h5 class="modal-title" id="exampleModalLongTitle">Add Movie</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>

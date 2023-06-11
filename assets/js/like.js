@@ -55,7 +55,7 @@ const getLike = async () => {
       });
     });
   
-    document.getElementById('like').innerHTML = dataLike;
+    document.getElementById('like').innerHTML = dataLike.join("");
   
   };
   

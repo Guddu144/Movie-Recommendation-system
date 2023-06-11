@@ -48,7 +48,7 @@ const getGenre = async () => {
         });
       });
   
-      document.getElementById('movie').innerHTML = div;
+      document.getElementById('movie').innerHTML = div.join("");
     });
   
   };

@@ -46,7 +46,7 @@ const getRecommend = async () => {
       });
     });
   
-    document.getElementById('recommend').innerHTML = div;
+    document.getElementById('recommend').innerHTML = div.join("");
   
   };
   
