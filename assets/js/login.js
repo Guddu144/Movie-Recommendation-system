@@ -6,6 +6,7 @@ document.getElementById("login").onclick = function () {
     "password": password,
   };
 
+  validateForm();
   const login = async () => {
     let req = await request(
       "POST",
@@ -15,19 +16,19 @@ document.getElementById("login").onclick = function () {
     );
     let status = req.status;
 
-    if (Number(status) === 200) {
-      // window.location.href = 'home.html'
+    if (status === "200") {
+      window.location.href = 'home.html'
       console.log('suc')
       localStorage.setItem('token', req.JwtToken)
 
     }
     else {
-      alert('Cannot login')
+      window.alert('Cannot login')
     }
   }
   login();
 
-  // console.log(email)
+  // console.log(email)++
   //
   // console.log('sh')
 }
@@ -40,6 +41,7 @@ function validateForm() {
   // Check if the email field is empty
   if (!email) {
     error = "Email is required";
+
   }
   // Check if the email field is a valid email
   else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {

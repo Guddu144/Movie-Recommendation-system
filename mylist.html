@@ -8,6 +8,7 @@
   <title>Movie Recommendation System</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,7 +44,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="#">Home</a>
+            <a class="nav-link " aria-current="page" href="home.html">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="latest.html">Latest</a>
@@ -77,8 +78,8 @@
   </nav>
 
   <div class="d-flex justify-content-between">
-    <div class="row row-cols-1 row-cols-md-6 g-4">
-      <div class="col">
+    <div id="mylist" class="d-flex flex-wrap gap-4 movie_card g-4">
+      <div  class="col-2">
         <div class="card h-100">
           <img src="..." class="card-img-top" alt="...">
           <div class="card-body">
@@ -90,66 +91,7 @@
           </div>
         </div>
       </div>
-      <div class="col">
-        <div class="card h-100">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-              content. This content is a little bit longer.</p>
-            <a href="#" class="btn btn-success">Give rating</a>
-            <a href="#" class="btn btn-success">-</a>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-              content. This content is a little bit longer.</p>
-            <a href="#" class="btn btn-success">Give rating</a>
-            <a href="#" class="btn btn-success">-</a>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-              content. This content is a little bit longer.</p>
-            <a href="#" class="btn btn-success">Give rating</a>
-            <a href="#" class="btn btn-success">-</a>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-              content. This content is a little bit longer.</p>
-            <a href="#" class="btn btn-success">Give rating</a>
-            <a href="#" class="btn btn-success">-</a>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-              content. This content is a little bit longer.</p>
-            <a href="#" class="btn btn-success">Give rating</a>
-            <a href="#" class="btn btn-success">-</a>
-          </div>
-        </div>
-      </div>
+  
     </div>
 </div>
 
@@ -175,6 +117,58 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/home.js"></script>
+    <script src="assets/js/request.js"></script>
+    <script>
+     const getMyList = async () => {
+   
+    let req = await request(
+      "GET",
+      "http://localhost:9595/watchlist/view",
+      true,
+    );
+  
+    let data = req.data;
+  
+    const div = data.map(i => {
+  
+      return `
+      <div class="col-2">
+        <div class="editbtn card h-100" data_movie_id="${i.movieId}">
+          <img src="http://localhost:9595/image/${i.movieId}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">${i.movieTitle}</h5>
+            <p class="card-text">${i.movieDescription}.</p>
+          </div>
+        </div>
+       
+      </div>
+      `;
+    });
+  
+    $(document).ready(function () {
+            $(document).on("click", ".editbtn", function () {
+              let movieId = $(this).attr("data_movie_id");
+              localStorage.setItem('movieId', movieId);
+              window.location.href = "moviePage.html";
+            });
+          });
+    document.getElementById('mylist').innerHTML = div;
+  
+  };
+  
+  getMyList(); 
+
+
+  document.getElementById("remove").onclick = function () {
+  const movieId = localStorage.getItem('movieId');
+
+ 
+  
+
+}
+
+
+    </script>
 
 </body>
 

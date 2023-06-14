@@ -70,7 +70,7 @@
           </div>
           <!-- </li> --></form>
           <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
-          <button class="btn btn-success logout-btn" type="submit">Logout</button>
+         <a href="admin_login.html"> <button class="btn btn-success logout-btn" type="submit" onclick="clearLocal()">Logout</button></a>
 
       </div>
     </div>
@@ -97,7 +97,7 @@
             </div>
 
             <div class="box-3">
-                <a href="/admin/food/view" class="btn btn1">
+                <a href="./rating.html " class="btn btn1">
                     <i class="fas fa-star"></i>
                 </a>
 
@@ -105,7 +105,7 @@
                 <p>Rating</p>
             </div>
             <div class="box-3">
-                <a href="/admin/logout" class="btn btn1">
+                <a href="admin_login.html" class="btn btn1">
                     <i class="fas fa-sign-out-alt"></i>
                 </a>
 
@@ -127,6 +127,14 @@
   <div id="preloader">
     <div class="line"></div>
   </div>
+
+  <script>
+    function clearLocal(){
+      localStorage.getItem('token')
+      localStorage.clear()
+      alert('you are logged out')
+    }
+  </script>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

@@ -17,15 +17,8 @@ document.getElementById("rate_btn").addEventListener("click", function () {
     );
     console.log(req)
 
-    // if (Number(status) === 200) {
-    //   // window.location.href = 'home.html'
-    //   console.log('suc')
-    //   localStorage.setItem('token', req.JwtToken)
-
-    // }
-    // else {
-    //   alert('Cannot login')
-    // }
+    let msg=req?.status
+document.querySelector(".messageDiv").textContent = msg;
   }
   rating();
 
