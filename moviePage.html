@@ -125,6 +125,9 @@
               <button id="bookmark" class="bookmark-icon">
                 <i class="fas fa-bookmark watchlist-icon position-absolute" style="top: 10px; right: 10px;"></i>
               </button>
+              <button id="remove" class="bookmark-icon">
+                <i class="fas fa-bookmark watchlist-icon position-absolute" style="top: 10px; right: 25px;"></i>
+              </button>
             </div>
               <div class="container">
                 <div class="details-content" style="position: relative;">
@@ -193,6 +196,34 @@
   document.querySelector(".description").textContent = data.movieDescription;
   document.querySelectorAll(".transformers-right")[4].textContent = data.releaseDate;
 
+  console.log(data.avgRating);
+
+  if (data.avgRating <= 1 && data.avgRating > 0)
+ {
+  document.getElementById("star5").checked = true;
+ }
+ if (data.avgRating <= 2 && data.avgRating > 1)
+ {
+  document.getElementById("star4").checked = true;
+ }
+ if (data.avgRating <= 3 && data.avgRating > 2)
+ {
+  document.getElementById("star3").checked = true;
+ }
+ if (data.avgRating <= 4 && data.avgRating > 3)
+ {
+  document.getElementById("star2").checked = true;
+ }
+ if (data.avgRating <= 5 && data.avgRating > 4)
+ {
+  document.getElementById("star1").checked = true;
+ }
+ 
+
+  if (req.message === "rated") {
+    document.getElementById("rate_btn").style.display="none";
+  }
+
 }
 getMovieById();
 
@@ -203,8 +234,8 @@ getMovieById();
 <script>
 document.getElementById("remove").onclick = function () {
   const movieId = localStorage.getItem('movieId');
-
-  const addBookmarks = async () => {
+  
+  const removeBookmark = async () => {
     
       let val=await request("DELETE", `http://localhost:9595/watchlist/remove/${movieId}`, true);
       console.log(val?.data)
@@ -214,7 +245,7 @@ document.getElementById("remove").onclick = function () {
    
   };
   
-  addBookmarks();
+  removeBookmark();
   
 
 }
@@ -226,7 +257,7 @@ document.getElementById("remove").onclick = function () {
 document.getElementById("bookmark").onclick = function () {
   const movieId = localStorage.getItem('movieId');
 
-  const remove = async () => {
+  const addBookmark = async () => {
     
       let val=await request("POST", `http://localhost:9595/watchlist/add/${movieId}`, true);
       console.log(val)
@@ -236,7 +267,7 @@ document.getElementById("bookmark").onclick = function () {
    
   };
   
-  remove();
+  addBookmark();
   
 
 }

@@ -6,8 +6,9 @@ const getMovie = async () => {
   );
 
   let val = req.data;
-console.log(val)
+// console.log(val)
   const div = val.map(i => {
+
     return `
       <div class="col-2">
         <span class="editbtn" data_movie_id="${i.movieId}">
